@@ -7,6 +7,11 @@ The project is built using cutting-edge technologies like Groq API for natural l
 
 ---
 
+**Loom-Video:-**  A short video walkthrough of the Project.
+https://drive.google.com/file/d/1y00rkDAoB-2vFliS5QKaN2I_4h6CHKKT/view?usp=drivesdk
+
+---
+
 ## **Features**
 - **Data Input Options**: Upload a CSV file or connect to a Google Sheet for real-time data processing.
 - **Dynamic Querying**: Define custom search prompts using placeholders (e.g., `{company}`) to extract relevant information dynamically.
