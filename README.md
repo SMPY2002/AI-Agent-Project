@@ -53,6 +53,13 @@ Install the required Python libraries using:
 ```bash
 pip install -r requirements.txt
 ```
+
+### **Step 3: Run the Application**
+Start the Streamlit application:
+```bash
+streamlit run app/main_app.py
+```
+
 ---
 
 ## API Keys and Environment Variables
@@ -83,14 +90,6 @@ To ensure the smooth functioning of the application, you need to set up your API
    - The application will automatically read the environment variables from the `.env` file during runtime.
    - Ensure the `.env` file is stored securely and not shared or uploaded publicly to maintain the confidentiality of your API keys.
 **Note:-** Google Cloud secret file is not present in the .env file you should just download your secret_file(JSON Format) from google cloud and place in your root directory and paste it path to the code just below the .env configuration.
-
----
-
-### **Step 4: Run the Application**
-Start the Streamlit application:
-```bash
-streamlit run app/main_app.py
-```
 
 ---
 
