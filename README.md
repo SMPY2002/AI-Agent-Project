@@ -137,7 +137,7 @@ Project/
 ├── README.md                # Project documentation
 ├── LICENSE                  # Open-source license
 ├── .gitignore               # Files to ignore in Git
-
+```
 ---
 
 ## **Contributing**
