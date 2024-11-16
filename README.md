@@ -55,15 +55,35 @@ pip install -r requirements.txt
 ```
 ---
 
-### **Step 3: Configure Environment Variables**
-1. Create a .env file in the root directory.
-2. Add the following details:
-   ```plaintext
-   GROQ_API_KEY=your_groq_api_key
-   SERP_API_KEY=your_serp_api_key
-   GOOGLE_CLIENT_SECRET=your_google_client_secret_file.json
-   ```
-3. Ensure .env is listed in .gitignore to avoid exposing sensitive data.
+## API Keys and Environment Variables
+
+To ensure the smooth functioning of the application, you need to set up your API keys and environment variables. Follow these steps:
+
+### 1. **Locating the `.env` File**
+   - The repository contains an example `.env.example` file in the root directory.
+   - Rename this file to `.env`.
+
+### 2. **Adding API Keys**
+   - Open the `.env` file in a text editor.
+   - Add the required API keys and credentials for third-party integrations.
+   - Example:
+     ```plaintext
+     GOOGLE_SHEETS_API_KEY=<Your Google Sheets API Key>
+     GOOGLE_OAUTH_CLIENT_ID=<Your OAuth 2.0 Client ID>
+     ```
+
+### 3. **NGROK Configuration (If Applicable)**
+   - For exposing your local server to the internet using ngrok, add the ngrok token in the `.env` file.
+   - Example:
+     ```plaintext
+     NGROK_AUTH_TOKEN=<Your ngrok Auth Token>
+     ```
+
+### 4. **Usage**
+   - The application will automatically read the environment variables from the `.env` file during runtime.
+   - Ensure the `.env` file is stored securely and not shared or uploaded publicly to maintain the confidentiality of your API keys.
+**Note:-** Google Cloud secret file is not present in the .env file you should just download your secret_file(JSON Format) from google cloud and place in your root directory and paste it path to the code just below the .env configuration.
+
 ---
 
 ### **Step 4: Run the Application**
@@ -74,17 +94,34 @@ streamlit run app/main_app.py
 
 ---
 
-## **Usage Guide**
-1. Choose Data Source:
-  - Upload a CSV file or connect to a Google Sheet.
-2. Define a Query:
-  - Use a placeholder (e.g., {entity_name}) for dynamic searches.
-  - Example Prompt: "Find the latest revenue details of {company}".
-3. View Results:
-  - The dashboard displays extracted data in a table.
-  - Use the "Download" button to save the results as a CSV file.
+## Usage Guide
+
+Follow these instructions to utilize the dashboard efficiently:
+
+### 1. **Uploading CSV Files**
+   - Click the **"Upload CSV File"** button on the dashboard.
+   - Choose a valid CSV file from your local system.
+   - Once uploaded, the file will be processed, and a preview of the data will be displayed in an interactive table.
+
+### 2. **Connecting to Google Sheets**
+   - Click the **"Connect Google Sheet"** button.
+   - Authenticate with your Google account to grant access to your Google Sheets.
+   - After authentication, provide the URL of the Google Sheet you want to connect.
+   - Select the required sheet from the dropdown menu to load its data into the dashboard for processing.
+   - The app maintains a real-time connection with the Google Sheet for live updates.
+
+### 3. **Setting Up Search Queries**
+   - Use the **"Primary Column Selection"** dropdown to choose the column containing the entities (e.g., company names).
+   - Input your custom search prompt in the **"Custom Prompt"** text box.
+   - Click **"Run Query"** to initiate the information retrieval process.
+   - The results will appear in a separate section and can be downloaded as a CSV file.
+
+### 4. **Extracted Results**
+   - Once the query completes, view the extracted results in an interactive preview table.
+   - Download the results as a CSV file for further analysis or use.
 
 ---
+
 
 ## **Working Example**
 
@@ -97,14 +134,14 @@ streamlit run app/main_app.py
 | BMW           | Germany       |
 
 #### Query:
-_"Retrieve the latest market share data for {Company} in {Country}."_
+_"Retrieve the latest market share data of {Company}."_
 
 ### **Output**
-| Company       | Country       | Market Share (%) |
-|---------------|---------------|------------------|
-| Tesla         | USA           | 68%              |
-| Samsung       | South Korea   | 25%              |
-| BMW           | Germany       | 10%              |
+| Company       | Market Share (%) |
+|---------------|------------------|
+| Tesla         |       45%        |
+| Samsung       |       38%        |
+| BMW           |       32%        |
 
 ---
 
