@@ -53,7 +53,7 @@ def fetch_google_sheet_data(credentials, spreadsheet_id, sheet_range):
 # Helper function: Authenticate with Google
 def authenticate_with_google():
     try:
-        flow = Flow.from_client_secrets_file(
+        flow = Flow.from_client_config(
             CLIENT_SECRETS_FILE,
             scopes=SCOPES,
             redirect_uri="https://5113-2409-4089-ceca-53c5-59a0-38f7-4d1b-986.ngrok-free.app"  # using ngrok provided url for https connection
