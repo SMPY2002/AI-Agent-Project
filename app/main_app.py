@@ -18,7 +18,12 @@ import os
 # Configuring API Keys and Credentials using .env file
 load_dotenv()
 # Google OAuth setup variables
-CLIENT_SECRETS_FILE = "client_secret.json"  # OAuth client secrets file from Google Cloud Console
+# Load client secrets from Streamlit Secrets
+
+client_secret_json = st.secrets["CLIENT_SECRET"]  # Retrieve the string
+CLIENT_SECRETS_FILE = json.loads(client_secret_json)  # Parse the string as JSON
+
+# OAuth client secrets file from Google Cloud Console
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 # Groq client
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
