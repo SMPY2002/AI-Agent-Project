@@ -170,11 +170,9 @@ _"Retrieve the latest market share data of {Company}."_
 Project/
 ├── app/
 │   ├── main_app.py          # Streamlit application code
-│   ├── helper_functions.py  # Utility functions (included in the main_app.py already)
 ├── resources/
-│   ├── ngrok.exe            # Optional HTTPS support
+│   ├── ngrok.exe/zip        # Optional HTTPS support(When run on local environment)
 ├── requirements.txt         # Python dependencies
-├── .env.example             # Template for environment variables
 ├── README.md                # Project documentation
 ├── LICENSE                  # Open-source license
 ├── .gitignore               # Files to ignore in Git
