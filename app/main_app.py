@@ -56,7 +56,7 @@ def authenticate_with_google():
         flow = Flow.from_client_config(
             CLIENT_SECRETS_FILE,
             scopes=SCOPES,
-            redirect_uri="https://5113-2409-4089-ceca-53c5-59a0-38f7-4d1b-986.ngrok-free.app"  # using ngrok provided url for https connection
+            redirect_uri="https://ai-info-retrieval.streamlit.app/"  # using ngrok provided url for https connection
         )
         auth_url, state = flow.authorization_url(prompt='consent')
         st.write(f"[Click here to authenticate with Google Sheets]({auth_url})")
