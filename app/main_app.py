@@ -170,9 +170,9 @@ def main():
                             {"role": "user", "content": f"Search Results:\n{formatted_results}\n\nUser Query: {user_query}"},
                         ]
                         response = client.chat.completions.create(
-                            model="gemma-7b-it",  # Google LLM model
+                            model="gemma2-9b-it",  # Google LLM model
                             messages=messages,
-                            temperature=0.8,
+                            temperature=0.7,
                             max_tokens=512,
                             stream=True,
                         )
