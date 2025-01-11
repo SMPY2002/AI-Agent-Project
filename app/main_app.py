@@ -220,9 +220,7 @@ def main():
                                     file_name=f"extracted_data_for_{column_name}.csv",
                                     mime="text/csv" 
                                 )
-                                # Show this message after click on download button
-                                if st.button("Download Retrived Information as CSV"):
-                                    st.success("Downloaded Successfully")
+                                st.success("Downloaded Successfully")
                             else:
                                 st.warning(f"Column '{column_name}' not found in the data.")
                         else:
