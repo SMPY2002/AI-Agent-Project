@@ -111,6 +111,8 @@ def format_search_results(results):
 
 # </------------------------------ Helper Functions - 2 (end)--------------------------------->
 
+# Set the page configuration FIRST
+st.set_page_config(page_title="CSV-Insighter", layout="wide")
 
 # <-------------------------------- Main App Function (start)--------------------------------->
 
